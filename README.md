@@ -24,30 +24,30 @@
   <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-## Description
+## Nest JS + GraphQL Gateway
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
-## Installation
+## Instalação
 
 ```bash
-$ npm install
+$ yarn install
 ```
 
-## Running the app
+## Executar API em modo dev
 
 ```bash
-# development
-$ npm run start
+# API posts
+$ nest start posts --watch
 
-# watch mode
-$ npm run start:dev
+# API users
+$ nest start users --watch
 
-# production mode
-$ npm run start:prod
+# API gateway
+$ nest start gateway --watch
 ```
 
-## Test
+## Testes
 
 ```bash
 # unit tests
@@ -60,16 +60,25 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
-## Support
+# API
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+Esse repo tem como proposta testar os recursos de graphql do poderoso NestJS 
+jutamente com as features para **microserviços** através do `@apollo/federation`.
 
-## Stay in touch
+As API graphql foram baseado no conceito [schema first#](https://docs.nestjs.com/graphql/resolvers#schema-first).
+ 
+## Users
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+API graphql para listagem dos autores de posts.
 
-## License
+## Posts
+
+API graphql para listagem de psots.
+
+## Gateway
+
+API Gateway que irá integrar os 2 serviços em um unico endpoint.
+
+## Licença
 
   Nest is [MIT licensed](LICENSE).

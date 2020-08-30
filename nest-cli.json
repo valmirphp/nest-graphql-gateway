@@ -5,14 +5,15 @@
   "root": "apps/gateway",
   "compilerOptions": {
     "webpack": true,
-    "tsConfigPath": "apps/gateway/tsconfig.app.json"
+    "tsConfigPath": "apps/gateway/tsconfig.app.json",
+    "assets": ["**/*.graphql"]
   },
   "projects": {
     "gateway": {
       "type": "application",
       "root": "apps/gateway",
       "entryFile": "main",
-      "sourceRoot": "apps/graphql/src",
+      "sourceRoot": "apps/gateway/src",
       "compilerOptions": {
         "tsConfigPath": "apps/gateway/tsconfig.app.json"
       }
