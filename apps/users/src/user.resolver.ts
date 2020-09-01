@@ -8,12 +8,12 @@ export class UserResolver {
   }
 
   @Query()
-  getUser(@Args('id') id: string) {
+  getUser(@Args('id') id: string): Promise<User> {
     return this.userService.findById(id);
   }
 
   @ResolveReference()
-  resolveReference(reference: { __typename: string; id: string }) {
+  resolveReference(reference: { __typename: string; id: string }): Promise<User> {
     return this.userService.findById(reference.id);
   }
 }

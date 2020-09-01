@@ -3,11 +3,13 @@ import { join } from 'path';
 import { UserResolver } from './user.resolver';
 import { UserService } from './user.service';
 import { GraphQLFederationModule } from '@nestjs/graphql';
+import { ConfigModule } from '@nestjs/config';
 
 const basePath = './apps/users';
 
 @Module({
   imports: [
+    ConfigModule.forRoot(),
     GraphQLFederationModule.forRoot({
       debug: true,
       tracing: false,
@@ -23,6 +25,7 @@ const basePath = './apps/users';
         path: join(process.cwd(), basePath, '/src/graphql.schema.ts'),
       },
       installSubscriptionHandlers: false,
+      engine: false,
       // engine: {
       //   reportSchema: true,
       //   debugPrintReports: false,
